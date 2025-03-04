@@ -223,7 +223,7 @@ def createDataSetFromDir(base_dir, bedFile):
                 sum_file[file] = sum[file]
 
                 for key in features:
-                    if glob_scores.has_key(file):
+                    if file in glob_scores:
                         glob_scores[file].append(scores[key])
                     else:
                         glob_scores[file] = [scores[key]]    
@@ -236,7 +236,7 @@ def createDataSetFromDir(base_dir, bedFile):
                     for key in features:
                         if key not in score_set[file]:
                             score_set[file][key] = 0
-                        if glob_scores.has_key(file):
+                        if file in glob_scores:
                             glob_scores[file].append(score_set[file][key])
                         else:
                             glob_scores[file] = [score_set[file][key]]    
@@ -406,7 +406,7 @@ def createDataSetFromList(base_list, bedFile):
             sum_file[file] = sum[file]
 
             for key in features:
-                if glob_scores.has_key(file):
+                if file in glob_scores:
                     glob_scores[file].append(scores[key])
                 else:
                     glob_scores[file] = [scores[key]]    
@@ -419,7 +419,7 @@ def createDataSetFromList(base_list, bedFile):
                 for key in features:
                     if key not in score_set[file]:
                         score_set[file][key] = 0
-                    if glob_scores.has_key(file):
+                    if file in glob_scores:
                         glob_scores[file].append(score_set[file][key])
                     else:
                         glob_scores[file] = [score_set[file][key]]    
@@ -481,7 +481,7 @@ def createDataSetFromDir_TEST(base_dir, bedFile,order):
             sum_file[file] = sum
 
             for key in features:
-                if glob_scores.has_key(file):
+                if file in glob_scores:
                     glob_scores[file].append(scores[key])
                 else:
                     glob_scores[file] = [scores[key]]
@@ -542,7 +542,7 @@ def createDataSetFromList_TEST(base_list, bedFile,order):
         sum_file[file] = sum
 
         for key in features:
-            if glob_scores.has_key(file):
+            if file in glob_scores:
                 glob_scores[file].append(scores[key])
             else:
                 glob_scores[file] = [scores[key]]
